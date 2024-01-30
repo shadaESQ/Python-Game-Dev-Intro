@@ -1,18 +1,25 @@
+#نجهز المكتبات حقت بايثوم
+
 import pygame
 import time
 import random
 pygame.font.init()
-
-WIDTH, HEIGHT = 1000, 800
+# اول شيء  نجهز النافذة حقت اللعبة حقتنا بالارتفاع و العرض 
+WIDTH, HEIGHT = 600, 600
+#نسوي متغير عشان نستدعيه في الكلاس الاساسي او الفانكشن الاساسية 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+#عنوان النافذة
 pygame.display.set_caption("Space Dodge")
+#هنا نسوي الخلفية حقت النافذة حقتنا ممكن باي لون او صورة 
+#نقدر نكتبه ممكن  BG = pygame.image.load("bg.jpeg") لكن عشان نخلي الخلفية الي حطيناها تجي على مقاس النافذة الافضل نكنت الامر كدا 
 
 BG = pygame.transform.scale(pygame.image.load("bg.jpeg"), (WIDTH, HEIGHT))
-
+#هنا نزبط خصائص اللاعب حقنا من عرض و ارتفاع راح يكون شكله مستطيل كبداية طبعا ممكن نحط شكل اخر اخر او حتى تصميم لشخصية ولكن للبساطة
 PLAYER_WIDTH = 40
 PLAYER_HEIGHT = 60
-
+#هنا اعطينا قيمة لسرعة اللاعب حقنا 
 PLAYER_VEL = 5
+#ه
 STAR_WIDTH = 10
 STAR_HEIGHT = 20
 STAR_VEL = 3
@@ -26,7 +33,7 @@ def draw(player, elapsed_time, stars):
     time_text = FONT.render(f"Time: {round(elapsed_time)}s", 1, "white")
     WIN.blit(time_text, (10, 10))
 
-    pygame.draw.rect(WIN, "red", player)
+    pygame.draw.rect(WIN, "purple", player)
 
     for star in stars:
         pygame.draw.rect(WIN, "white", star)
